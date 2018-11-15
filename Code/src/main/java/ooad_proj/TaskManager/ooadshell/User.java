@@ -1,6 +1,7 @@
 package ooad_proj.TaskManager.ooadshell;
 import org.springframework.data.annotation.Id;
 
+
 import java.util.*;
 
 /**
@@ -15,12 +16,17 @@ public abstract class User {
     public User() {
         username = "";
         password = "";
-        id = UUID.randomUUID().toString();
+        employeeType = "";
+//        id = UUID.randomUUID().toString();
     }
+
+//    private String id;
     @Id
-    private String id;
     public String username;
     private String password;
+    public String employeeType;
+
+
 
 
     /**
@@ -29,11 +35,14 @@ public abstract class User {
 
 
 
-    public  User(String _username, String _password) {
+    public  User(String _username, String _password, String _employeeType) {
         // TODO implement here
         username = _username;
         password = _password;
-        id = UUID.randomUUID().toString(); // this will make a random id
+        employeeType = _employeeType;
+//        id = UUID.randomUUID().toString(); // this will make a random id
+        String taskId = UUID.randomUUID().toString();
+//        taskDetails = _taskDetails;// this is for the task details for the respective users.
     }
 
     /**
@@ -43,6 +52,9 @@ public abstract class User {
         return username;
 
     }
+    public String getEmployeeType()
+    {return employeeType;}
+
 
     /**
      * @return
@@ -59,6 +71,8 @@ public abstract class User {
         // TODO implement here
         username = _username;
     }
+
+    public void getEmployeeType(String _employeeType){employeeType = _employeeType;}
 
     /**
      * @param  Password

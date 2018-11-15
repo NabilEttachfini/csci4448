@@ -1,66 +1,49 @@
 package ooad_proj.TaskManager.ooadshell;
 
+import org.omg.CORBA.ACTIVITY_COMPLETED;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import sun.security.pkcs11.wrapper.CK_DESTROYMUTEX;
+
 import java.util.*;
 
 /**
- *
+ * This is where the task will be stored and saved
  */
-public class Task {
 
-    /**
-     * Default constructor
-     */
-    public Task() {
+public abstract class Task{
+    // THIS IS FOR THE FACTORY DESIGN PATTERN.
+    public String taskDescription;
+    public String completionTime;
+    public int difficulty;
+    public Task(){
+        taskDescription = "";
+        completionTime = "";
+        difficulty = 0;
     }
-
+    public Task(String _description, String _completionTime, int _difficulty){
+        taskDescription = _description;
+        completionTime = _completionTime;
+        difficulty = _difficulty;
+    }
+//   public abstract String TaskDescription(String details);
     /**
      *
+     * Default construct
      */
-    public int TaskID;
 
-    /**
-     *
-     */
-    public String TaskDetails;
-
-    /**
-     *
-     */
-    public int status;
-
-    /**
-     *
-     */
-    public int time;
-
-
-
-
-
-    /**
-     * @param  TaskID
-     * @return
-     */ // this should be a string.
-    public int TaskInfo(int TaskID) {
-        // TODO implement here
-        return 0;
+    public String getTaskDescription(){
+        return taskDescription;
+    }
+    public String getCompletionTime()
+    {
+        return completionTime;
+    }
+    public int getDifficulty()
+    {
+        return difficulty;
     }
 
-    /**
-     * @param  TaskID
-     * @return
-     */
-    public void setTaskID(int TaskID) {
-        // TODO implement here
 
-    }
-
-    /**
-     * @return
-     */
-    public void Task() {
-        // TODO implement here
-
-    }
 
 }

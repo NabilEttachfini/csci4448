@@ -15,19 +15,18 @@ public class Manager extends User {
      */
     public Manager() {
         super();
-
-
     }
 
-    public Manager(String username, String password)
+    public Manager(String username, String password, String employeeType)
     {
-        super(username, password);
+        super(username, password, employeeType);
     }
     /**
      * @return
      */
     public int addTask() {
         // TODO implement here
+        // this is going to call the Task.Java file
         return 0;
     }
 

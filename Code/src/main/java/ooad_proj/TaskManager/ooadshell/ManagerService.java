@@ -10,10 +10,9 @@ public class ManagerService {
     public ManagerService(ManagerRepo Manrepo) {this.Manrepo = Manrepo;}
 
 
-    public void makeManager(String username, String password)
+    public void makeManager(String username, String password, String employeeType)
     {
-        Manager M = new Manager(username, password);
+        Manager M = new Manager(username, password, employeeType);
         Manrepo.save(M);
     }
-
 }

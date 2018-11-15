@@ -5,3 +5,4 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 @Repository
 public interface EmployeeRepo extends MongoRepository<Employee,String> {} // this class gives database functions ( find save del)
+
