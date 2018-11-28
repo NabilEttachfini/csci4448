@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface TaskRepo extends MongoRepository <Task,String> {}
+public interface TaskRepo extends MongoRepository <Task, String> {}
 

@@ -1,20 +1,27 @@
 package ooad_proj.TaskManager.ooadshell;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.annotation.Id;
+
 import java.util.Scanner;
 
 public class TaskFactory {
+    TaskService taskService;
+    @Autowired
+    public TaskFactory(TaskService taskService){
+        this.taskService = taskService;
+    }
+    public static Task getScrumTask(String descrption, String completionTime, int difficulty, String estatus,String name,String t_id){
+        return new Scrum(descrption, completionTime, difficulty, estatus,name, t_id);
+    }
+    public static Task getQaTask(String descrption, String completionTime, int difficulty, String estatus,String name,String t_id){
+        return new QA(descrption, completionTime, difficulty, estatus,name, t_id);
+    }
+    public static Task getSoftwareTask(String descrption, String completionTime, int difficulty, String estatus,String name,String t_id){
+        return new SoftwareEngineer(descrption, completionTime, difficulty, estatus,name, t_id);
+    }
 
-    public static Task getTask(TaskType task, String descrption, String completionTime, int difficulty)
-    {
-        switch (task)
-        {
-            case SCRUM:
-                return new Scrum(descrption, completionTime, difficulty);
-            case QAE:
-                return new QA(descrption, completionTime, difficulty);
-            case SOFTWAREENGINEER:
-                return new SoftwareEngineer(descrption, completionTime, difficulty);
-        }
-        return null;
+    public String getId(){
+        return taskService.getSize();
     }
 }
