@@ -9,36 +9,19 @@ import java.util.*;
 @Document(collection = "employees") // for mongoDB
 public class Employee extends User {
 
-    /**
-     * Default constructor
-     */
+
     public Employee() {
         super();
     }
+    /**
+     * Default constructor, extending the User class
+     *   @param  username this is the username for employee
+     *   @param password this is the username for employee
+     *   @param  employeeType this is where the employee type will go
+     */
     public Employee(String username, String password, String employeeType)
 
     {
         super(username, password, employeeType);
     }
-    /**
-     *
-     */
-    /**
-     * @param  TaskID
-     * @return
-     */
-    public int UpdateStatus( int TaskID) {
-        // TODO implement here
-        return 0;
-    }
-
-    /**
-     * @param  TaskID
-     * @return
-     */
-    public String CommentTask(int TaskID) {
-        // TODO implement here
-        return "test";
-    }
-
 }

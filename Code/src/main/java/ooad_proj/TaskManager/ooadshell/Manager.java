@@ -5,65 +5,27 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.*;
 
 /**
- *
+ * Class for creating a manager object
  */
+
 @Document(collection = "managers")
 public class Manager extends User {
 
     /**
-     * Default constructor
+     * Default constructor, uses super of User
      */
     public Manager() {
         super();
     }
+    /**
+     * This a constructor for the manager class that helps create the manager object
+     * @param username this is the username of the Manager
+     * @param password this is the password of the Manager
+     * @param employeeType takes in employee type of Manager
+     */
 
     public Manager(String username, String password, String employeeType)
     {
         super(username, password, employeeType);
     }
-    /**
-     * @return
-     */
-    public int addTask() {
-        // TODO implement here
-        // this is going to call the Task.Java file
-        return 0;
-    }
-
-    /**
-     * @param  TaskID
-     * @return
-     */
-    public void editTask(int TaskID) {
-        // TODO implement here
-
-    }
-
-    /**
-     * @param  TaskID
-     * @return
-     */
-    public void DeleteTask(int TaskID) {
-        // TODO implement here
-
-    }
-
-    /**
-     * @param  EmployeeID
-     * @param  TaskID
-     * @return
-     */
-    public void assignTask(int EmployeeID,int TaskID) {
-        // TODO implement here
-
-    }
-
-    /**
-     * @return
-     */
-    public void Manager() {
-        // TODO implement here
-
-    }
-
 }

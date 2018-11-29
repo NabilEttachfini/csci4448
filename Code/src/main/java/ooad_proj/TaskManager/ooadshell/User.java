@@ -20,111 +20,75 @@ public abstract class User {
 //        id = UUID.randomUUID().toString();
     }
 
-//    private String id;
+    /**
+     * setting user information
+     */
     @Id
     public String username;
     private String password;
     public String employeeType;
 
-
-
-
     /**
-     * @return
+     * Takes in info for user.
+     * @param _username username for Users
+     * @param _password password for Users
+     * @param _employeeType employee type for Users
      */
-
-
-
     public  User(String _username, String _password, String _employeeType) {
         // TODO implement here
         username = _username;
         password = _password;
         employeeType = _employeeType;
-//        id = UUID.randomUUID().toString(); // this will make a random id
-        String taskId = UUID.randomUUID().toString();
-//        taskDetails = _taskDetails;// this is for the task details for the respective users.
+//        String taskId = UUID.randomUUID().toString();
     }
 
     /**
-     * @return
+     * getting username
+     * @return return the username
      */
     public String getUserName() {
         return username;
 
     }
+
+    /**
+     * getting employee type
+     * @return return employee type
+     */
     public String getEmployeeType()
     {return employeeType;}
 
 
     /**
-     * @return
+     * getting password
+     * @return the password
      */
     private String getPassword() {
         return password;
     }
 
     /**
-     * @param
-     * @return
+     * setting username
+     * @param _username to set
+     * @return _username return just the username
      */
     public void setUserName(String _username) {
-        // TODO implement here
         username = _username;
     }
 
+    /**
+     * getting employee type
+     * @param _employeeType to get the employee type
+     */
     public void getEmployeeType(String _employeeType){employeeType = _employeeType;}
 
     /**
-     * @param  Password
-     * @return
+     * setting password
+     * @param  _Password to set the password
+     * @return the password saved
      */
-    private void setPassword(String Password) {
-        // TODO implement here
+    private void setPassword(String _Password) {
+        _Password = _Password;
 
     }
-
-    /**
-     * @return
-     */
-    public int getEmployeeID() {
-        // TODO implement here
-        return 0;
-    }
-
-    /**
-     * @param  EmployeeID
-     * @return
-     */
-    public void setEmployeeID(int EmployeeID) {
-        // TODO implement here
-
-    }
-
-    /**
-     * @param  password
-     * @param username
-     * @param  EmployeeID
-     * @return
-     */
-    public boolean login( String password, String username,  int EmployeeID) {
-        // TODO implement here
-        return true;
-
-    }
-
-    /**
-     * @return
-     */
-    public void logout() {
-        // TODO implement here
-
-    }
-
-    /**
-     *
-     */
-    public interface Interface1 {
-
-    }
-
 }

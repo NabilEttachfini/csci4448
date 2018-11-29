@@ -21,13 +21,28 @@ public class OoadShellApplication {
 	}
 }
 @ShellComponent
+/**
+ * This class is the main class in which the program runs through
+ */
 class myCommands extends MainMenu{ // CHECK THIS
-
+    /**
+     *  This is the constructor for this class.
+     * @param employeeService Dependency injection for the employeeService database connection
+     * @param managerService  Dependency injection for the managerService database connection
+     * @param taskService  Dependency injection for the taskService database connection
+     */
     @Autowired
    public myCommands(EmployeeService employeeService, ManagerService managerService, TaskService taskService){
        super(employeeService, managerService, taskService);
    }
 
+    /**
+     * Takes a user through login and signup and calls the proper functions for each user response, this uses the main menu class.
+     * @param employeeService Dependency injection for the employeeService database connection
+     * @param managerService Dependency injection for the managerService database connection
+     * @param taskService Dependency injection for the taskService database connection
+     * @param m injecting the main menu class since it is called many times
+     */
     @Autowired
     @ShellMethod("MainMenu")
     public void welcome(EmployeeService employeeService, ManagerService managerService, TaskService taskService, MainMenu m) // DEPENDENCY INJECT INTO SHELL
